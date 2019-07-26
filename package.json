@@ -1,0 +1,23 @@
+{
+  "name": "@anoblet/markdown-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/markdown-component.js",
+  "scripts": {
+    "build": "rollup --config",
+    "save": "git add . && git commit -m \"Chore: Save\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "rollup --config -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lit-element": "^2.2.0"
+  },
+  "devDependencies": {
+    "rollup": "^1.16.6",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.2"
+  }
+}
