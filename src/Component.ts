@@ -11,7 +11,7 @@ export class MarkdownComponent extends LitElement {
   public render = Template.bind(this);
 
   @property() public src;
-  @property() public html;
+  @property() public html = "";
 
   public inheritedStyles;
 
