@@ -15,6 +15,11 @@ export class MarkdownComponent extends LitElement {
 
   public inheritedStyles;
 
+  constructor() {
+    super();
+    console.log(this.inheritedStyles);
+  }
+
   firstUpdated() {
     if (this.inheritedStyles) {
       const styleSheets = this.shadowRoot.adoptedStyleSheets
