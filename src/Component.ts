@@ -17,9 +17,7 @@ export class MarkdownComponent extends LitElement {
 
   public connectedCallback() {
     super.connectedCallback();
-    console.log(1);
     if (this.inheritedStyles) {
-      console.log("hi");
       this.shadowRoot.adoptedStyleSheets = [this.inheritedStyles._styleSheet];
     }
   }
