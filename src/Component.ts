@@ -17,7 +17,8 @@ export class MarkdownComponent extends LitElement {
 
   firstUpdated() {
     if (this.inheritedStyles) {
-      this.shadowRoot.adoptedStyleSheets = [this.inheritedStyles._styleSheet];
+      const styleSheets = this.shadowRoot.adoptedStyleSheets
+      this.shadowRoot.adoptedStyleSheets = [...styleSheets, this.inheritedStyles._styleSheet];
     }
     (async () => {
       const result = await fetch(this.src).then(response => {
