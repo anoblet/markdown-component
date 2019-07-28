@@ -13,6 +13,17 @@ export class MarkdownComponent extends LitElement {
   @property() public src;
   @property() public html;
 
+  public inheritedStyles;
+
+  public connectedCallback() {
+    super.connectedCallback();
+    console.log(1);
+    if (this.inheritedStyles) {
+      console.log("hi");
+      this.shadowRoot.adoptedStyleSheets = [this.inheritedStyles._styleSheet];
+    }
+  }
+
   firstUpdated() {
     (async () => {
       const result = await fetch(this.src).then(response => {
