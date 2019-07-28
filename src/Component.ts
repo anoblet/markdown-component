@@ -15,14 +15,10 @@ export class MarkdownComponent extends LitElement {
 
   public inheritedStyles;
 
-  public connectedCallback() {
-    super.connectedCallback();
+  firstUpdated() {
     if (this.inheritedStyles) {
       this.shadowRoot.adoptedStyleSheets = [this.inheritedStyles._styleSheet];
     }
-  }
-
-  firstUpdated() {
     (async () => {
       const result = await fetch(this.src).then(response => {
         return response.text();
