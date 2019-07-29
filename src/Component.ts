@@ -1,5 +1,6 @@
 import { LitElement, customElement, property } from "lit-element";
 import { BeforeRender } from "@anoblet/mixins/dist/before-render";
+import { applyStyle } from "@anoblet/utility";
 
 import Style from "./Style";
 import Template from "./Template";
@@ -10,20 +11,15 @@ const marked = require("marked");
 export class MarkdownComponent extends BeforeRender(LitElement) {
   public static styles = Style;
   public render = Template.bind(this);
- 
+
   @property() public src;
   @property() public html = "";
 
   public inheritedStyles;
 
+  // Runs off of constructor as an async method. Properties are available!
   async beforeRender() {
-    if (this.inheritedStyles) {
-      const styleSheets = this.shadowRoot.adoptedStyleSheets;
-      this.shadowRoot.adoptedStyleSheets = [
-        ...styleSheets,
-        this.inheritedStyles._styleSheet
-      ];
-    }
+    if (this.inheritedStyles) applyStyle(this.inheritedStyles);
     const result = await fetch(this.src).then(response => {
       return response.text();
     });
