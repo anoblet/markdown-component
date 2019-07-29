@@ -25,4 +25,8 @@ export class MarkdownComponent extends BeforeRender(LitElement) {
     });
     this.html = marked(result);
   }
+
+  createRenderRoot() {
+    return this;
+  }
 }
