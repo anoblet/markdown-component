@@ -1,6 +1,6 @@
 import { LitElement, customElement, property } from "lit-element";
 import { BeforeRender } from "@anoblet/mixins/dist/before-render";
-import { applyStyle } from "@anoblet/utility";
+import { applyStyle } from "@anoblet/utility/dist/utility";
 
 import Style from "./Style";
 import Template from "./Template";
