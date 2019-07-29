@@ -17,8 +17,8 @@ export class MarkdownComponent extends BeforeRender(LitElement) {
 
   public inheritedStyles;
 
+  // Runs off of constructor as an async method. Properties are available!
   async beforeRender() {
-    // Runs off of constructor as an async method. Properties are available!
     applyStyle(this, this.inheritedStyles);
     const result = await fetch(this.src).then(response => {
       return response.text();
