@@ -12,7 +12,7 @@ export class MarkdownComponent extends BeforeRender(LitElement) {
   public static styles = Style;
   public render = Template.bind(this);
 
-  @property() public src;
+  @property() public src = "";
   @property() public html = "";
 
   public inheritedStyles;
