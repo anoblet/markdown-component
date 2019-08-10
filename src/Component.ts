@@ -25,6 +25,6 @@ export class MarkdownComponent extends BeforeRender(LitElement) {
   }
 
   firstUpdated() {
-    applyStyle(this, this.inheritedStyles);
+    if (this.inheritedStyles) applyStyle(this, this.inheritedStyles);
   }
 }
