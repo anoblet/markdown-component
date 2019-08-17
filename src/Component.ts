@@ -1,5 +1,5 @@
 import { LitElement, customElement, property } from "lit-element";
-import { BeforeRender } from "@anoblet/mixins/dist/before-render";
+import Mixins from "@anoblet/mixins";
 import { applyStyle } from "@anoblet/utility/dist/utility";
 
 import Style from "./Style";
@@ -8,7 +8,7 @@ import Template from "./Template";
 const marked = require("marked");
 
 @customElement("markdown-component")
-export class MarkdownComponent extends BeforeRender(LitElement) {
+export class MarkdownComponent extends Mixins.BeforeRender(LitElement) {
   public static styles = Style;
   public render = Template.bind(this);
 
